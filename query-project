@@ -1,0 +1,54 @@
+# Menentukan Primary key table customer
+SELECT CustomerID, COUNT(CustomerID)
+as Total_cust
+from `bi-muamalat2022.Final_Task.Customers`
+GROUP BY 1
+Order by 1 desc
+Limit 5;
+
+# Menentukan Primary key table order
+SELECT OrderID, COUNT(OrderID) as
+Totalorders FROM `bi-muamalat2022.Final_Task.Orders`
+GROUP BY 1
+ORDER BY 2 DESC
+LIMIT 5;
+
+# Menentukan Primary key table product
+SELECT ProdNumber, COUNT(*) AS
+Total_Products
+FROM `Final_Task.Products`
+GROUP BY ProdNumber
+LIMIT 5;
+
+# Menentukan Primary key table product_category
+SELECT CategoryID, COUNT(CategoryID) as
+Total_Kategori FROM
+`Final_Task.ProductCategory`
+GROUP BY 1
+ORDER BY 2 DESC
+LIMIT 5;
+
+Query Join Antar Table
+Date as order_date,
+CategoryName as category_name,
+ProdName as product_name,
+Quantity as order_qty,
+Price as product_price,
+Quantity*Price as total_sales,
+CustomerEmail as cust_email,
+CustomerCity as cust_city
+FROM
+(
+Select * FROM
+(
+Select * from
+(
+SELECT * FROM `bi-muamalat-2022.Final_Task.Customers` AS cs
+JOIN `bi-muamalat-2022.Final_Task.Orders` as od
+ON cs.CustomerID = od.CustomerID) AS cs_od
+JOIN `bi-muamalat-2022.Final_Task.Products` as pr
+ON cs_od.ProdNumber = pr.ProdNumber) AS cs_od_pr
+JOIN `bi-muamalat-2022.Final_Task.ProductCategory` as pc
+ON cs_od_pr.Category=pc.CategoryID
+)
+ORDER BY 1 ASC
