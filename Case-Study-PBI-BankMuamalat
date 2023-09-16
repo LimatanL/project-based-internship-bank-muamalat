@@ -1,0 +1,12 @@
+Bagaimana cara kita mengetahui penjualan produk di suatu Perusahaan. Berdasarkan hasil dari
+tabel Customers, Products, Order, dan ProductCategory, akan dilakukan visualisasi yang bertujuan
+untuk mengetahui:
+1. Total keseluruhan sales
+2. Total keseluruhan sales berdasarkan kategori produk
+3. Total keseluruhan qty berdasarkan kategori produk
+4. Total sales berdasarkan kota
+5. Total qty berdasarkan kota
+6. Top 5 kategori produk yang paling tinggi salesnya
+7. Top 5 kategori produk yang paling tinggi qtynya
+Dari hasil visualisasi akan diperoleh suatu insight dan rekomendasi untuk mempertahankan penjualan
+ataupun menaikkan penjualan.
